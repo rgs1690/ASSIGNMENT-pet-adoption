@@ -231,7 +231,7 @@ allPets.addEventListener('click', () => {
       <div class="card">
           <h5 class = "card-header">${pet.name}</h5>
           <div class="card-body">
-          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}
+          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
           <div>
           <h5 class="card-title">${pet.color}</h5>
           </div>
