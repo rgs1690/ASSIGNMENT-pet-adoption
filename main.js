@@ -231,7 +231,7 @@ allPets.addEventListener('click', () => {
       <div class="card">
           <h5 class = "card-header">${pet.name}</h5>
           <div class="card-body">
-          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}
+          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
           <div>
           <h5 class="card-title">${pet.color}</h5>
           </div>
@@ -243,3 +243,66 @@ allPets.addEventListener('click', () => {
     renderToDom('#content', domString);
   });
 
+  const filterType = (array, type) => {
+    return pets.filter(pet => pet.type === type)
+  };
+  const dogType = filterType(pets, "dog")
+  const catType = filterType(pets, "cat")
+  const dinoType = filterType(pets, "dino")
+  
+  dogs.addEventListener('click', () => {
+    let domString = ''
+    dogType.forEach((pet) => {
+    domString += `
+    <div class="card">
+          <h5 class = "card-header">${pet.name}</h5>
+          <div class="card-body">
+          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+          <div>
+          <h5 class="card-title">${pet.color}</h5>
+          </div>
+          <p class="card-text">${pet.specialSkill}</p>
+          <a href="#" class="btn btn-primary">${pet.type}</a>
+          </div>
+      </div>`
+    })
+      renderToDom('#content', domString);
+    });
+  
+    cats.addEventListener('click', () => {
+      let domString = ''
+      catType.forEach((pet) => {
+      domString += `
+      <div class="card">
+            <h5 class = "card-header">${pet.name}</h5>
+            <div class="card-body">
+            <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+            <div>
+            <h5 class="card-title">${pet.color}</h5>
+            </div>
+            <p class="card-text">${pet.specialSkill}</p>
+            <a href="#" class="btn btn-primary">${pet.type}</a>
+            </div>
+        </div>`
+      })
+        renderToDom('#content', domString);
+      });
+
+      dinos.addEventListener('click', () => {
+        let domString = ''
+        dinoType.forEach((pet) => {
+        domString += `
+        <div class="card">
+              <h5 class = "card-header">${pet.name}</h5>
+              <div class="card-body">
+              <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+              <div>
+              <h5 class="card-title">${pet.color}</h5>
+              </div>
+              <p class="card-text">${pet.specialSkill}</p>
+              <a href="#" class="btn btn-primary">${pet.type}</a>
+              </div>
+          </div>`
+        })
+          renderToDom('#content', domString);
+        });
