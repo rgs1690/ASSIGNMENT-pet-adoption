@@ -210,3 +210,36 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+
+  const divElement = document.querySelector('#content')
+  const dogs = document.querySelector('#dogs'); 
+  const cats = document.querySelector('#cats'); 
+  const dinos = document.querySelector('#dinos'); 
+  const allPets = document.querySelector('#allPets'); 
+  
+  const renderToDom = (divId, textToRender) => {
+    const selectedDiv = document.querySelector(divId);
+    selectedDiv.innerHTML = textToRender;
+  };
+
+allPets.addEventListener('click', () => {
+    let domString= ''
+    
+    pets.forEach((pet) => {
+      domString += `
+      <div class="card">
+          <h5 class = "card-header">${pet.name}</h5>
+          <div class="card-body">
+          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}
+          <div>
+          <h5 class="card-title">${pet.color}</h5>
+          </div>
+          <p class="card-text">${pet.specialSkill}</p>
+          <a href="#" class="btn btn-primary">${pet.type}</a>
+          </div>
+      </div>`
+    });
+    renderToDom('#content', domString);
+  });
+
