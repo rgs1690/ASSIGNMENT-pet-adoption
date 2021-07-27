@@ -217,35 +217,43 @@ const pets = [
 
   const buttons = () => { 
     const domString = `
-    <button class="button" id="dogs">Dogs</button>
-    <button class="button" id="cats">Cats</button>
-    <button class="button" id="dinos">Dinos</button>
-    <button class="button" id="allPets">All Pets</button>
+    <button class="dogBtn" id="dog">Dogs</button>
+    <button class="catBtn" id="cat">Cats</button>
+    <button class="dinoBtn" id="dino">Dinos</button>
+    <button class="allBtn" id="allPets">All Pets</button>
     `;
 
   renderToDom("#buttonContainer", domString);
 };
 
- const filterType = (array, type) => {
-    return array.filter((petObject) => petObjects.type === type)
+   
+
+
+
+const filterType = (array, type) => {
+    return array.filter((petObject) => petObject.type === type)
   };
 
+ 
+ 
   const handleButtonClick = (event) => {
-    if (event.target.id === "allPets") {
-      cardBuilder(pets);
-    }
-    if (event.target.id === "dogs") {
+    
+    if (event.target.id === "dog") {
       const dogs = filterType(pets, event.target.id);
       cardBuilder(dogs);
     }
-    if (event.target.id === "cats") {
+    if (event.target.id === "cat") {
       const cats = filterType(pets, event.target.id);
       cardBuilder(cats);
     }
-    if (event.target.id === "dinos") {
+    if (event.target.id === "dino") {
       const dinos = filterType(pets, event.target.id);
       cardBuilder(dinos);
     }
+    if (event.target.id === "allPets") {
+      cardBuilder(pets);
+    }
+ 
   };
   
   
@@ -279,7 +287,7 @@ const pets = [
     const init = () => {
       buttons(); 
       buttonEvents();
-      cardBuilder(pets);
+      cardBuilder(pets);// 
     };
 
 

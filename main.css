@@ -5,30 +5,31 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.btn,
+
 .card {
     margin: 10px;
   }
 
-#dogs{
+.dogBtn{
     background-color: green;
     color: white;
 }
-#cats{
+.catBtn{
     background-color: blue;
     color: white;
 }
-#dinos{
+.dinoBtn{
     background-color: orange;
     color: white;
 }
-#allPets{
+.allBtn{
     background-color: red;
     color: white;
 }
 .deletebtn{
-    width: 15px; 
-    height:6px; 
+    width: fit-content; 
+    height:40px; 
+    font-size: 14px;
     background-color: red;
     color: white;  
     padding: 8px;
