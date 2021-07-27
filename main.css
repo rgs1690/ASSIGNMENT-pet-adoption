@@ -1,4 +1,14 @@
 
+.cardStyles,
+.buttonStyles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn,
+.card {
+    margin: 10px;
+  }
 
 #dogs{
     background-color: green;
@@ -15,4 +25,12 @@
 #allPets{
     background-color: red;
     color: white;
+}
+.deletebtn{
+    width: 15px; 
+    height:6px; 
+    background-color: red;
+    color: white;  
+    padding: 8px;
+    border-radius: 4px;
 }

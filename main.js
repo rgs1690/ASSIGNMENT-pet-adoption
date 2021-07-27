@@ -210,99 +210,77 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
-
-
-  const divElement = document.querySelector('#content')
-  const dogs = document.querySelector('#dogs'); 
-  const cats = document.querySelector('#cats'); 
-  const dinos = document.querySelector('#dinos'); 
-  const allPets = document.querySelector('#allPets'); 
-  
   const renderToDom = (divId, textToRender) => {
     const selectedDiv = document.querySelector(divId);
     selectedDiv.innerHTML = textToRender;
+  }; 
+
+  const buttons = () => { 
+    const domString = `
+    <button class="button" id="dogs">Dogs</button>
+    <button class="button" id="cats">Cats</button>
+    <button class="button" id="dinos">Dinos</button>
+    <button class="button" id="allPets">All Pets</button>
+    `;
+
+  renderToDom("#buttonContainer", domString);
+};
+
+ const filterType = (array, type) => {
+    return array.filter((petObject) => petObjects.type === type)
   };
 
-allPets.addEventListener('click', () => {
-    let domString= ''
-    
-    pets.forEach((pet) => {
-      domString += `
-      <div class="card">
-          <h5 class = "card-header">${pet.name}</h5>
-          <div class="card-body">
-          <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
-          <div>
-          <h5 class="card-title">${pet.color}</h5>
-          </div>
-          <p class="card-text">${pet.specialSkill}</p>
-          <a href="#" class="btn btn-primary">${pet.type}</a>
-          </div>
-      </div>`
-    });
-    renderToDom('#content', domString);
-  });
-
-  const filterType = (array, type) => {
-    return pets.filter(pet => pet.type === type)
+  const handleButtonClick = (event) => {
+    if (event.target.id === "allPets") {
+      cardBuilder(pets);
+    }
+    if (event.target.id === "dogs") {
+      const dogs = filterType(pets, event.target.id);
+      cardBuilder(dogs);
+    }
+    if (event.target.id === "cats") {
+      const cats = filterType(pets, event.target.id);
+      cardBuilder(cats);
+    }
+    if (event.target.id === "dinos") {
+      const dinos = filterType(pets, event.target.id);
+      cardBuilder(dinos);
+    }
   };
-  const dogType = filterType(pets, "dog")
-  const catType = filterType(pets, "cat")
-  const dinoType = filterType(pets, "dino")
   
-  dogs.addEventListener('click', () => {
-    let domString = ''
-    dogType.forEach((pet) => {
-    domString += `
-    <div class="card">
-          <h5 class = "card-header">${pet.name}</h5>
-          <div class="card-body">
+  
+  const cardBuilder = (petsArray) => {
+    let domString = ""; 
+    petsArray.forEach((pet) => {
+      domString += `
+      <div id = "card" class="card">
+        <h5 class = "card-header">${pet.name}</h5>
+        <div class="card-body">
           <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
           <div>
-          <h5 class="card-title">${pet.color}</h5>
-          </div>
-          <p class="card-text">${pet.specialSkill}</p>
-          <a href="#" class="btn btn-primary">${pet.type}</a>
-          </div>
-      </div>`
-    })
-      renderToDom('#content', domString);
-    });
-  
-    cats.addEventListener('click', () => {
-      let domString = ''
-      catType.forEach((pet) => {
-      domString += `
-      <div class="card">
-            <h5 class = "card-header">${pet.name}</h5>
-            <div class="card-body">
-            <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
-            <div>
             <h5 class="card-title">${pet.color}</h5>
-            </div>
-            <p class="card-text">${pet.specialSkill}</p>
-            <a href="#" class="btn btn-primary">${pet.type}</a>
-            </div>
-        </div>`
-      })
-        renderToDom('#content', domString);
+          </div>
+          <p class="card-text">${pet.specialSkill}</p>
+          <a href="#" class="btn btn-primary">${pet.type}</a>
+          <a href="#" id = "deletebtn" class="btn deletebtn">DELETE</a>
+        </div>
+     </div>
+      `;
       });
+  
+      renderToDom("#petCards", domString);
+  
+    };
+  
+   const buttonEvents = () => {
+      document.querySelector("#buttonContainer").addEventListener("click", handleButtonClick);
+    };
+      
+    const init = () => {
+      buttons(); 
+      buttonEvents();
+      cardBuilder(pets);
+    };
 
-      dinos.addEventListener('click', () => {
-        let domString = ''
-        dinoType.forEach((pet) => {
-        domString += `
-        <div class="card">
-              <h5 class = "card-header">${pet.name}</h5>
-              <div class="card-body">
-              <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
-              <div>
-              <h5 class="card-title">${pet.color}</h5>
-              </div>
-              <p class="card-text">${pet.specialSkill}</p>
-              <a href="#" class="btn btn-primary">${pet.type}</a>
-              </div>
-          </div>`
-        })
-          renderToDom('#content', domString);
-        });
+
+    init();
