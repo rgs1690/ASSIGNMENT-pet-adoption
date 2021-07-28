@@ -11,7 +11,7 @@ const pets = [
     color: "Poop-Colored",
     specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
     type: "dino",
-    imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg"
+    imageUrl: "https://static0.srcdn.com/wordpress/wp-content/uploads/2018/06/Blue-the-Velociraptor-in-Jurassic-World.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5"
   },
   {
     name: "Whiskers",
@@ -74,7 +74,7 @@ const pets = [
     color: "Orange",
     specialSkill: "Can be around food without staring creepily at it.",
     type: "dino",
-    imageUrl: "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600"
+    imageUrl: "https://sm.mashable.com/t/mashable_sea/photo/default/cover_kqfc.960.png"
   },
   {
     name: "Buster",
@@ -109,21 +109,21 @@ const pets = [
     color: "Poop-Colored",
     specialSkill: "Drives at a safe rate of speed in snow or rain.",
     type: "dino",
-    imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
+    imageUrl: "http://www.dinopit.com/wp-content/uploads/2012/09/compsognathus.jpg"
   },
   {
     name: "Muffin",
     color: "Yellow",
     specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
     type: "cat",
-    imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+    imageUrl: "http://cdn.shopify.com/s/files/1/1018/7517/articles/fat_cat_4d1e8174-4917-476e-b280-ad71f4ea261f_1024x1024.png?v=1546452788"
   },
   {
     name: "Salem",
     color: "Poop-Colored",
     specialSkill: "Proficient in air guitar",
     type: "dino",
-    imageUrl: "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg"
+    imageUrl: "https://i.natgeofe.com/n/b96b572c-98e2-4ec2-a714-08a6b95cf646/triceratopshorridus_hexdcb.jpg"
   },
   {
     name: "Callie",
@@ -137,21 +137,21 @@ const pets = [
     color: "Black",
     specialSkill: "Uses litter box at appropriate hours.",
     type: "cat",
-    imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg"
+    imageUrl: "https://www.scarymommy.com/wp-content/uploads/2019/09/GettyImages-146582583-min-1.jpg"
   },
   {
     name: "Miss kitty",
     color: "Red",
     specialSkill: "Owns a Nintendo Power Glove.",
     type: "dino",
-    imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
+    imageUrl: "https://i.ytimg.com/vi/PbVU0te_zV4/maxresdefault.jpg"
   },
   {
     name: "Snuggles",
     color: "Orange",
     specialSkill: "Is comfortable with jokes about his receding hairline.",
     type: "cat",
-    imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+    imageUrl: "https://i.pinimg.com/564x/16/ca/b1/16cab153397fc070d5369635ba891e8d.jpg"
   },
   {
     name: "Buddy",
@@ -165,14 +165,14 @@ const pets = [
     color: "Brown",
     specialSkill: "Participates in karaoke but does not force others to go out to karaoke.",
     type: "dog",
-    imageUrl: "http://www.dogbreedplus.com/dog_breeds/images/basset-hound-4.jpg"
+    imageUrl: "https://gfp-2a3tnpzj.stackpathdns.com/wp-content/uploads/2016/07/Chocolate-Labrador-Retriever-e1533746894917-1600x700.jpg"
   },
   {
     name: "Salem",
     color: "Red",
     specialSkill: "Knows the words to 4 rap songs.",
     type: "cat",
-    imageUrl: "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg"
+    imageUrl: "https://i.pinimg.com/originals/a2/70/84/a27084861e4a2bc347a17ff2cb7a2078.jpg"
   },
   {
     name: "Bubba",
@@ -207,9 +207,9 @@ const pets = [
     color: "Red",
     specialSkill: "Doesn’t get weirded out by the word “moist.”",
     type: "dino",
-    imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+    imageUrl: "https://dinoanimals.com/wp-content/uploads/2020/07/Iguanodon-2.jpg"
   }
-];
+]; 
 const renderToDom = (divId, textToRender) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToRender;
