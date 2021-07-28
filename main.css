@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    
 }
 button,
 .card {
@@ -35,4 +35,10 @@ button,
     color: white;  
     padding: 8px;
     border-radius: 4px;
+}
+img {
+    float: left;
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
 }
