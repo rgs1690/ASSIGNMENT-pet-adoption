@@ -226,7 +226,17 @@ const buttons = () => {
 renderToDom("#buttonContainer", domString);
 };
 
- 
+const deletePet = (event) => {
+
+  const targetId = event.target.id;
+  const targetType = event.target.type;
+  console.log(targetId)
+  if(targetType === "button") {
+    pets.splice(targetId, 1);
+    cardBuilder(pets);
+    
+  }
+};
 
 
 
@@ -259,7 +269,7 @@ const handleButtonClick = (event) => {
 
 const cardBuilder = (petsArray) => {
   let domString = ""; 
-  petsArray.forEach((pet) => {
+  petsArray.forEach((pet, index) => {
     domString += `
     <div id = "card" class="card">
       <h5 class = "card-header">${pet.name}</h5>
@@ -270,7 +280,7 @@ const cardBuilder = (petsArray) => {
         </div>
         <p class="card-text">${pet.specialSkill}</p>
         <a href="#" class="btn btn-primary">${pet.type}</a>
-        <a href="#" id = "deletebtn" class="btn deletebtn">DELETE</a>
+        <a href="#" id=${index} type="button" class="btn deletebtn">DELETE</a>
       </div>
    </div>
     `;
@@ -282,6 +292,7 @@ const cardBuilder = (petsArray) => {
 
  const buttonEvents = () => {
     document.querySelector("#buttonContainer").addEventListener("click", handleButtonClick);
+    document.querySelector("#petCards").addEventListener("click", deletePet);
   };
     
   const init = () => {
